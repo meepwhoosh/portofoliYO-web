@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Work - PortofolioYO!</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-page-background text-page-text">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center">
+        <div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center mr-2">
+          <span class="text-white font-bold text-lg">P</span>
+        </div>
+        <span class="font-bold text-xl text-page-text">
+          Portofolio<span class="text-primary">YO!</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-6">
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search creators or works..."
+            class="pl-10 pr-4 py-2 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary w-64"
+          >
+          <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400 h-5 w-5"></i>
+        </div>
+
+        <nav class="flex items-center space-x-6">
+          <a href="explore.html" class="text-page-text hover:text-primary font-medium">
+            Explore
+          </a>
+          <a href="index.html#creators-section" class="text-page-text hover:text-primary font-medium">
+            Creators
+          </a>
+          <a href="upload.html" class="flex items-center text-primary font-medium">
+            <i data-feather="upload" class="mr-1 h-5 w-5"></i>
+            Upload
+          </a>
+          <a
+            href="login.html"
+            class="retro-button bg-primary text-white hover:bg-primary/90"
+          >
+            Login
+          </a>
+        </nav>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        class="md:hidden p-2 rounded-md"
+        id="mobile-menu-button"
+      >
+        <i data-feather="menu" class="h-6 w-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 py-4 pb-6 bg-white shadow-md">
+      <div class="relative mb-4">
+        <input
+          type="text"
+          placeholder="Search creators or works..."
+          class="w-full pl-10 pr-4 py-2 rounded-full bg-gray-100 focus:outline-none"
+        >
+        <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400 h-5 w-5"></i>
+      </div>
+      <nav class="flex flex-col space-y-3">
+        <a
+          href="explore.html"
+          class="px-3 py-2 rounded-md hover:bg-gray-100 text-page-text"
+        >
+          Explore
+        </a>
+        <a
+          href="index.html#creators-section"
+          class="px-3 py-2 rounded-md hover:bg-gray-100 text-page-text"
+        >
+          Creators
+        </a>
+        <a
+          href="upload.html"
+          class="px-3 py-2 rounded-md hover:bg-gray-100 text-primary flex items-center"
+        >
+          <i data-feather="upload" class="mr-2 h-5 w-5"></i>
+          Upload
+        </a>
+        <a
+          href="login.html"
+          class="retro-button bg-primary text-white text-center"
+        >
+          Login
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <div class="container mx-auto px-4 py-8">
+    <a
+      href="index.html"
+      class="flex items-center text-page-text hover:text-primary mb-8"
+    >
+      <i data-feather="arrow-left" class="mr-2" size="18"></i>
+      Back to home
+    </a>
+    
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+      <h1 class="text-3xl font-bold mb-2">Upload Your Work</h1>
+      <p class="text-gray-600 mb-8">
+        Share your creative work with the PortofolioYO! community and potential clients.
+      </p>
+      
+      <form id="upload-form" class="space-y-8">
+        <!-- Upload area -->
+        <div class="space-y-4">
+          <label class="block text-sm font-medium text-gray-700 mb-1">
+            Upload Images/Files <span class="text-primary">*</span>
+          </label>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- File previews will be added here by JavaScript -->
+            <div id="file-previews" class="contents">
+              <!-- Previews will be inserted here -->
+            </div>
+            
+            <!-- Upload button -->
+            <label class="cursor-pointer aspect-video flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-lg hover:bg-gray-50">
+              <input
+                type="file"
+                id="file-input"
+                accept="image/*,video/*"
+                class="hidden"
+                multiple
+              />
+              <i data-feather="upload" class="text-gray-400 mb-2" size="32"></i>
+              <span class="text-sm text-gray-500">Upload files</span>
+              <span class="text-xs text-gray-400 mt-1">
+                PNG, JPG, GIF, MP4 up to 5MB
+              </span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Project details -->
+        <div class="space-y-6">
+          <div>
+            <label for="title" class="block text-sm font-medium text-gray-700 mb-1">
+              Title <span class="text-primary">*</span>
+            </label>
+            <input
+              id="title"
+              type="text"
+              class="block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="Give your work a title"
+              required
+            />
+          </div>
+          
+          <div>
+            <label for="description" class="block text-sm font-medium text-gray-700 mb-1">
+              Description
+            </label>
+            <textarea
+              id="description"
+              rows="5"
+              class="block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="Tell us about your work, your process, and the story behind it..."
+            ></textarea>
+          </div>
+          
+          <div>
+            <label for="category" class="block text-sm font-medium text-gray-700 mb-1">
+              Category <span class="text-primary">*</span>
+            </label>
+            <select
+              id="category"
+              class="block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              required
+            >
+              <option value="graphic-design">Graphic Design</option>
+              <option value="web-design">Web Design</option>
+              <option value="video">Video</option>
+              <option value="advertising">Advertising</option>
+              <option value="illustration">Illustration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="tags" class="block text-sm font-medium text-gray-700 mb-1">
+              Tags
+            </label>
+            <div class="relative">
+              <input
+                id="tags"
+                type="text"
+                class="block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="Add tags (press Enter after each tag)"
+              />
+            </div>
+            
+            <!-- Tags container -->
+            <div id="tags-container" class="flex flex-wrap gap-2 mt-3">
+              <!-- Tags will be added here by JavaScript -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="pt-4 border-t border-gray-200 flex justify-end">
+          <a
+            href="index.html"
+            class="retro-button bg-gray-200 text-gray-800 hover:bg-gray-300 mr-4"
+          >
+            Cancel
+          </a>
+          <button
+            type="submit"
+            class="retro-button bg-primary text-white"
+            id="upload-button"
+          >
+            Upload Work
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-8 md:mb-0">
+          <div class="flex items-center">
+            <div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center mr-2">
+              <span class="text-white font-bold text-lg">P</span>
+            </div>
+            <span class="font-bold text-xl text-white">
+              Portofolio<span class="text-primary">YO!</span>
+            </span>
+          </div>
+          <p class="mt-4 max-w-xs text-gray-400">
+            The creative portfolio platform that helps you showcase your best work and connect with clients worldwide.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-bold text-lg mb-4">Platform</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">How it works</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-lg mb-4">Company</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-lg mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400">© 2025 PortofolioYO! All rights reserved.</p>
+        <div class="mt-4 md:mt-0 flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="facebook" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="instagram" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="twitter" class="h-6 w-6"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize feather icons
+      feather.replace();
+      
+      // Upload form submission
+      const uploadForm = document.getElementById('upload-form');
+      
+      if (uploadForm) {
+        uploadForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const title = document.getElementById('title').value;
+          const description = document.getElementById('description').value;
+          const category = document.getElementById('category').value;
+          
+          // Get tags from the tags container
+          const tagElements = document.querySelectorAll('#tags-container span');
+          const tags = Array.from(tagElements).map(el => el.textContent);
+          
+          // Get files from the file input
+          const fileInput = document.getElementById('file-input');
+          const files = fileInput.files;
+          
+          if (!title) {
+            alert('Please enter a title for your work.');
+            return;
+          }
+          
+          if (files.length === 0) {
+            alert('Please upload at least one file.');
+            return;
+          }
+          
+          console.log('Upload work:', { title, description, category, tags, files });
+          // In a real app, you would send this to your backend
+          
+          // For demo purposes, show success and redirect
+          alert('Work uploaded successfully!');
+          window.location.href = 'explore.html';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
