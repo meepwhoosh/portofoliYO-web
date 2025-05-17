@@ -11,97 +11,24 @@
 </head>
 <body class="bg-page-background text-page-text">
   <!-- Navbar -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="index.html" class="flex items-center">
-        <div class="bg-primary rounded-full w-10 h-10 flex items-center justify-center mr-2">
-          <span class="text-white font-bold text-lg">P</span>
-        </div>
-        <span class="font-bold text-xl text-page-text">
-          Portofolio<span class="text-primary">YO!</span>
-        </span>
-      </a>
-
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-6">
-        <div class="relative">
-          <input
-            type="text"
-            placeholder="Search creators or works..."
-            class="pl-10 pr-4 py-2 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary w-64"
-          >
-          <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400 h-5 w-5"></i>
-        </div>
-
-        <nav class="flex items-center space-x-6">
-          <a href="explore.html" class="text-page-text hover:text-primary font-medium">
-            Explore
-          </a>
-          <a href="index.html#creators-section" class="text-page-text hover:text-primary font-medium">
-            Creators
-          </a>
-          <a href="upload.html" class="flex items-center text-page-text hover:text-primary font-medium">
-            <i data-feather="upload" class="mr-1 h-5 w-5"></i>
-            Upload
-          </a>
-          <a
-            href="login.html"
-            class="retro-button bg-primary text-white hover:bg-primary/90"
-          >
-            Login
-          </a>
-        </nav>
-      </div>
-
-      <!-- Mobile menu button -->
-      <button
-        class="md:hidden p-2 rounded-md"
-        id="mobile-menu-button"
-      >
-        <i data-feather="menu" class="h-6 w-6"></i>
+  <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center">
+      <a href="index.html" class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></a>
+    </div>
+    
+    <div class="flex items-center space-x-4">
+      <button class="p-2 rounded-full hover:bg-gray-100">
+        <i data-feather="search" class="text-gray-600 h-5 w-5"></i>
       </button>
+      <!-- Notification Icon -->
+      <button class="p-2 rounded-full hover:bg-gray-100 relative">
+        <i data-feather="bell" class="text-gray-600 h-5 w-5"></i>
+        <span class="absolute top-1 right-1 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+      <a href="login.html" class="px-4 py-2 text-primary-800 hover:text-primary-600">Login</a>
+      <a href="sign-up.html" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Join Free</a>
     </div>
-
-    <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="md:hidden hidden px-4 py-4 pb-6 bg-white shadow-md">
-      <div class="relative mb-4">
-        <input
-          type="text"
-          placeholder="Search creators or works..."
-          class="w-full pl-10 pr-4 py-2 rounded-full bg-gray-100 focus:outline-none"
-        >
-        <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400 h-5 w-5"></i>
-      </div>
-      <nav class="flex flex-col space-y-3">
-        <a
-          href="explore.html"
-          class="px-3 py-2 rounded-md hover:bg-gray-100 text-page-text"
-        >
-          Explore
-        </a>
-        <a
-          href="index.html#creators-section"
-          class="px-3 py-2 rounded-md hover:bg-gray-100 text-page-text"
-        >
-          Creators
-        </a>
-        <a
-          href="upload.html"
-          class="px-3 py-2 rounded-md hover:bg-gray-100 text-page-text flex items-center"
-        >
-          <i data-feather="upload" class="mr-2 h-5 w-5"></i>
-          Upload
-        </a>
-        <a
-          href="login.html"
-          class="retro-button bg-primary text-white text-center"
-        >
-          Login
-        </a>
-      </nav>
-    </div>
-  </header>
+  </nav>
 
   <!-- Main content -->
   <div class="container mx-auto px-4 py-8">
