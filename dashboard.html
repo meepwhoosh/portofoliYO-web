@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortofolioYO! - Creative Portfolio Platform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-page-background text-page-text">
+   <!-- Navbar -->
+  <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center">
+      <a href="index.html" class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></a>
+    </div>
+    
+    <div class="flex items-center space-x-4">
+      <button class="p-2 rounded-full hover:bg-gray-100">
+        <i data-feather="search" class="text-gray-600 h-5 w-5"></i>
+      </button>
+      <!-- Notification Icon -->
+      <button class="p-2 rounded-full hover:bg-gray-100 relative">
+        <i data-feather="bell" class="text-gray-600 h-5 w-5"></i>
+        <span class="absolute top-1 right-1 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+      <a href="login.html" class="px-4 py-2 text-primary-800 hover:text-primary-600">Login</a>
+      <a href="sign-up.html" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Join Free</a>
+    </div>
+  </nav>
+
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-10 pb-20">
+      <!-- Decorative blobs -->
+      <div
+        class="blob-shape w-64 h-64 bg-soft-pink top-10 left-10 animate-float"
+      ></div>
+      <div
+        class="blob-shape w-80 h-80 bg-soft-yellow bottom-10 right-10 animate-float"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="blob-shape w-40 h-40 bg-soft-blue top-40 right-40 animate-float"
+        style="animation-delay: 2s"
+      ></div>
+
+      <div class="container mx-auto px-10 relative">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+            <span class="block font-black">Simply The Best</span>
+            <span class="block text-primary font-black">Creative Portfolio</span>
+            <span class="block font-black">For Creators</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mb-8">
+            Share your creative work, get inspired, and connect with clients
+            looking for talented creators. The modern way that customers love.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="sign-up.html"
+              class="retro-button bg-primary text-white hover:bg-primary/90"
+            >
+              Get Started
+            </a>
+            <a
+              href="explore.html"
+              class="retro-button bg-secondary text-white hover:bg-secondary/90"
+            >
+              Explore Works
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+          <div class="bg-soft-yellow card rounded-lg p-6 shadow-lg">
+            <div class="text-4xl font-bold mb-2">10M+</div>
+            <p class="text-gray-700">Works created all around the globe</p>
+          </div>
+
+          <div class="bg-soft-pink card rounded-lg p-6 shadow-lg">
+            <div class="text-4xl font-bold mb-2">200K+</div>
+            <p class="text-gray-700">Professional creators on our platform</p>
+          </div>
+
+          <div class="bg-soft-blue card rounded-lg p-6 shadow-lg">
+            <div class="text-4xl font-bold mb-2">50K+</div>
+            <p class="text-gray-700">Projects completed through our platform</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <div class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-secondary-600 font-semibold tracking-wide uppercase">Categories</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Browse by creative field
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+                    <!-- Graphic Design -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-w-3 aspect-h-2 bg-gray-200 group-hover:opacity-75">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8b3885?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Graphic Design" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-medium text-gray-900">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Graphic Design
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">Logos, branding, print materials</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Web Design -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-w-3 aspect-h-2 bg-gray-200 group-hover:opacity-75">
+                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Web Design" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-medium text-gray-900">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Web Design
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">UI/UX, websites, apps</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-w-3 aspect-h-2 bg-gray-200 group-hover:opacity-75">
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Video" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-medium text-gray-900">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Video
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">Animation, motion graphics</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Advertising -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-w-3 aspect-h-2 bg-gray-200 group-hover:opacity-75">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Advertising" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-medium text-gray-900">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Advertising
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">Campaigns, social media</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Illustration -->
+                    <div class="group relative bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-w-3 aspect-h-2 bg-gray-200 group-hover:opacity-75">
+                            <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Illustration" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-medium text-gray-900">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Illustration
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">Digital art, character design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How it works section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            How To Make Your Portfolio Stand Out On
+            <span class="text-primary">PortofolioYO!</span>
+          </h2>
+          <p class="text-gray-600">
+            Your gateway to becoming a recognized creative professional and
+            growing your client base. Smart templates give you time to focus on
+            what's important.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="text-center">
+            <div
+              class="bg-soft-yellow w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold"
+            >
+              1
+            </div>
+            <h3 class="text-xl font-bold mb-2">
+              Start inspired with smart style templates
+            </h3>
+            <p class="text-gray-600">
+              Never stare at a blank page again. We help you present your work
+              with style.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="bg-soft-pink w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold"
+            >
+              2
+            </div>
+            <h3 class="text-xl font-bold mb-2">
+              Add content and watch visitors engage
+            </h3>
+            <p class="text-gray-600">
+              The perfect presentation makes people stop and notice your amazing
+              work.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="bg-soft-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold"
+            >
+              3
+            </div>
+            <h3 class="text-xl font-bold mb-2">
+              Make edits easily with intuitive controls
+            </h3>
+            <p class="text-gray-600">
+              Simple drag and drop tools that allow you to customize to your
+              style.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a href="signup.html" class="retro-button bg-primary text-white">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-8 md:mb-0">
+            <div class="flex items-center">
+              <div
+                class="bg-primary rounded-full w-10 h-10 flex items-center justify-center mr-2"
+              >
+                <span class="text-white font-bold text-lg">P</span>
+              </div>
+              <span class="font-bold text-xl text-white">
+                Portofolio<span class="text-primary">YO!</span>
+              </span>
+            </div>
+            <p class="mt-4 max-w-xs text-gray-400">
+              The creative portfolio platform that helps you showcase your best
+              work and connect with clients worldwide.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="font-bold text-lg mb-4">Platform</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >How it works</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Features</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white">Pricing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white">FAQ</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg mb-4">Company</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white">Blog</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white">Careers</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg mb-4">Legal</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Cookie Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400">© 2025 PortofolioYO! All rights reserved.</p>
+          <div class="mt-4 md:mt-0 flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="facebook" class="h-6 w-6"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="instagram" class="h-6 w-6"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i data-feather="twitter" class="h-6 w-6"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
