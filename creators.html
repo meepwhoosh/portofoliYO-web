@@ -16,6 +16,43 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="bg-page-background text-page-text">
+
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortofolioYO! - Creative Portfolio Platform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-page-background text-page-text">
+   <!-- Navbar -->
+  <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center">
+      <a href="index.html" class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></a>
+    </div>
+    
+    <div class="flex items-center space-x-4">
+      <button class="p-2 rounded-full hover:bg-gray-100">
+        <i data-feather="search" class="text-gray-600 h-5 w-5"></i>
+      </button>
+      <!-- Notification Icon -->
+      <button class="p-2 rounded-full hover:bg-gray-100 relative">
+        <i data-feather="bell" class="text-gray-600 h-5 w-5"></i>
+        <span class="absolute top-1 right-1 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+      <a href="login.html" class="px-4 py-2 text-primary-800 hover:text-primary-600">Login</a>
+      <a href="sign-up.html" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Join Free</a>
+    </div>
+  </nav>
     
     <!-- Hero Section -->
     <section class="relative overflow-hidden pt-10 pb-16">
