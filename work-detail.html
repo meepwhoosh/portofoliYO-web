@@ -15,7 +15,15 @@
     <div class="flex items-center">
       <a href="index.html" class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></a>
     </div>
-    
+<div class="hidden md:flex space-x-6">
+      <div class="flex-1 flex justify-center items-center space-x-6">
+        <a href="explore.html" class="text-page-text hover:text-primary font-medium">
+          Explore
+        </a>
+        <a href="creators.html" class="text-page-text hover:text-primary font-medium">
+          Creators
+        </a>
+      </div>
     <div class="flex items-center space-x-4">
       <button class="p-2 rounded-full hover:bg-gray-100">
         <i data-feather="search" class="text-gray-600 h-5 w-5"></i>
@@ -25,24 +33,34 @@
         <i data-feather="bell" class="text-gray-600 h-5 w-5"></i>
         <span class="absolute top-1 right-1 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
       </button>
-      <a href="login.html" class="px-4 py-2 text-primary-800 hover:text-primary-600">Login</a>
-      <a href="sign-up.html" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Join Free</a>
+      <a href="upload.html" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Upload Work</a>
+      <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-full h-full object-cover">
+      </div>
     </div>
   </nav>
 
+  
+
   <!-- Main content -->
   <div class="container mx-auto px-4 py-8">
+
     <a href="explore.html" class="inline-flex items-center text-gray-600 hover:text-primary mb-6">
       <i data-feather="arrow-left" class="h-5 w-5 mr-2"></i>
-      Back to Explore
+         <span class="font-bold">Back to Explore</span>
     </a>
     
     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-      <div class="h-96 bg-gray-200 relative">
+      <div class="h-96 bg-gray-200 relative flex items-center justify-center">
+        <!-- Gambar work yang lebih nyata -->
         <img 
-          src="https://via.placeholder.com/1200x800?text=Modern+Logo+Design" 
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" 
           alt="Modern Logo Design" 
           class="w-full h-full object-cover">
+        <span class="absolute bottom-2 right-2 bg-white bg-opacity-80 px-2 py-1 rounded text-xs flex items-center">
+          <i data-feather="image" class="h-4 w-4 mr-1"></i>
+          Work Image
+        </span>
       </div>
       
       <div class="p-6 md:p-8">
@@ -68,18 +86,23 @@
         </div>
         
         <div class="flex items-center space-x-4 py-4 border-b border-gray-200">
-          <a href="creator-profile.html">
+          <a href="creator-profile.html" class="relative group">
+            <!-- Foto profil asli -->
             <img 
-              src="https://via.placeholder.com/100" 
+              src="https://randomuser.me/api/portraits/men/32.jpg" 
               alt="Alex Chen" 
-              class="h-12 w-12 rounded-full">
+              class="h-12 w-12 rounded-full border-2 border-primary">
+            <span class="absolute bottom-0 right-0 bg-green-400 border-2 border-white rounded-full w-3 h-3"></span>
           </a>
           
           <div>
-            <a href="creator-profile.html" class="font-semibold text-page-text hover:text-primary">
+            <a href="creator-profile.html" class="font-semibold text-page-text hover:text-primary flex items-center">
               Alex Chen
+              <img src="https://img.icons8.com/color/16/000000/verified-badge.png" alt="Verified" class="ml-1" title="Verified Creator">
             </a>
-            <p class="text-sm text-gray-500">Graphic Designer • Singapore</p>
+            <p class="text-sm text-gray-500 flex items-center">
+              <img src="https://img.icons8.com/color/16/000000/singapore.png" alt="Singapore" class="mr-1"> Graphic Designer • Singapore
+            </p>
           </div>
           
           <div class="ml-auto">
@@ -94,9 +117,13 @@
         
         <div class="py-6">
           <div class="flex items-center space-x-2 mb-4 text-sm">
-            <span class="bg-soft-peach px-3 py-1 rounded-full">Graphic Design</span>
+            <span class="bg-soft-peach px-3 py-1 rounded-full flex items-center">
+              <img src="https://img.icons8.com/color/16/000000/paint-palette.png" alt="Design" class="mr-1"> Graphic Design
+            </span>
             <span class="text-gray-500">•</span>
-            <span class="text-gray-500">May 10, 2025</span>
+            <span class="text-gray-500 flex items-center">
+              <img src="https://img.icons8.com/color/16/000000/calendar--v1.png" alt="Date" class="mr-1"> May 10, 2025
+            </span>
           </div>
           
           <p class="text-gray-700 leading-relaxed mb-6">
@@ -115,11 +142,21 @@
             <div>
               <h4 class="text-sm font-semibold text-gray-600 mb-2">Skills</h4>
               <div class="flex flex-wrap gap-2">
-                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm">Logo Design</span>
-                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm">Brand Identity</span>
-                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm">Typography</span>
-                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm">Adobe Illustrator</span>
-                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm">Figma</span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/idea.png" alt="Logo" class="mr-1"> Logo Design
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/identity-theft.png" alt="Brand" class="mr-1"> Brand Identity
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/?size=16&id=TzsCwjhRimqt&format=png&color=000000" alt="Typography" class="mr-1"> Typography
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/adobe-illustrator.png" alt="Illustrator" class="mr-1"> Adobe Illustrator
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/figma--v1.png" alt="Figma" class="mr-1"> Figma
+                </span>
               </div>
             </div>
           </div>
@@ -130,7 +167,8 @@
           
           <form id="comment-form" class="mb-8">
             <div class="flex space-x-4">
-              <img src="https://via.placeholder.com/40" alt="Your Avatar" class="h-10 w-10 rounded-full">
+              <!-- Foto profil user yang komentar -->
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Your Avatar" class="h-10 w-10 rounded-full border-2 border-primary">
               <div class="flex-1">
                 <textarea
                   id="comment-text"
@@ -151,11 +189,15 @@
           
           <div id="comments-container" class="space-y-6">
             <div class="flex space-x-4">
-              <img src="https://via.placeholder.com/40" alt="Sarah Johnson" class="h-10 w-10 rounded-full">
+              <!-- Foto profil komentar 1 -->
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson" class="h-10 w-10 rounded-full border-2 border-primary">
               <div class="flex-1">
                 <div class="bg-gray-50 rounded-lg p-4">
                   <div class="flex justify-between mb-1">
-                    <span class="font-semibold">Sarah Johnson</span>
+                    <span class="font-semibold flex items-center">
+                      Sarah Johnson
+                      <img src="https://img.icons8.com/color/16/000000/verified-badge.png" alt="Verified" class="ml-1" title="Verified User">
+                    </span>
                     <span class="text-sm text-gray-500">2 days ago</span>
                   </div>
                   <p class="text-gray-700">
@@ -170,7 +212,8 @@
             </div>
             
             <div class="flex space-x-4">
-              <img src="https://via.placeholder.com/40" alt="Michael Brown" class="h-10 w-10 rounded-full">
+              <!-- Foto profil komentar 2 -->
+              <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Michael Brown" class="h-10 w-10 rounded-full border-2 border-primary">
               <div class="flex-1">
                 <div class="bg-gray-50 rounded-lg p-4">
                   <div class="flex justify-between mb-1">

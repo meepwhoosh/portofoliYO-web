@@ -10,25 +10,37 @@
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="bg-page-background text-page-text">
+
+  <!-- Decorative blobs -->
+  <div class="pointer-events-none fixed z-0 inset-0">
+    <div
+      class="blob-shape w-64 h-64 bg-soft-pink absolute top-10 left-10 animate-float opacity-60"
+    ></div>
+    <div
+      class="blob-shape w-80 h-80 bg-soft-yellow absolute bottom-10 right-10 animate-float opacity-60"
+      style="animation-delay: 1s"
+    ></div>
+    <div
+      class="blob-shape w-40 h-40 bg-soft-blue absolute top-40 right-40 animate-float opacity-60"
+      style="animation-delay: 2s"
+    ></div>
+  </div>
+
   <div class="min-h-screen bg-page-background flex flex-col">
     <div class="container mx-auto px-4 py-8">
       <a
         href="index.html"
         class="flex items-center text-page-text hover:text-primary mb-8">
         <i data-feather="arrow-left" class="mr-2" size="18"></i>
-        Back to home
+          <span class="font-bold">Back to home</span>
       </a>
 
       <div class="max-w-md mx-auto">
         <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
           <div class="text-center mb-8">
-            <div class="flex justify-center mb-4">
-              <div class="bg-primary rounded-full w-12 h-12 flex items-center justify-center">
-                <span class="text-white font-bold text-xl">P</span>
-              </div>
-            </div>
+            <div class="flex justify-center mb-4"></div>
             <h1 class="text-2xl font-bold text-page-text">
-              Join <span class="text-primary">PortofolioYO!</span>
+              Join <span class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></span>
             </h1>
             <p class="text-gray-500 mt-2">
               Create your account and start sharing your work
@@ -99,6 +111,39 @@
               </div>
             </div>
 
+             <div class="mt-6">
+              <div class="flex items-center justify-center mb-4">
+              <span class="text-gray-400 text-sm">or continue with</span>
+              </div>
+              <div class="flex flex-row space-x-3 justify-center">
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition"
+                onclick="window.location.href='#'"
+              >
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="w-5 h-5 mr-2" />
+                <span class="text-gray-700 font-medium">Google</span>
+              </button>
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition"
+                onclick="window.location.href='sign-up.html'"
+              >
+                <i data-feather="mail" class="w-5 h-5 mr-2 text-gray-500"></i>
+                <span class="text-gray-700 font-medium">Email</span>
+              </button>
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition"
+                onclick="window.location.href='#'"
+              >
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-5 h-5 mr-2" />
+                <span class="text-gray-700 font-medium">GitHub</span>
+              </button>
+              </div>
+            </div>
+
+
             <div class="flex items-center">
               <input
                 id="terms"
@@ -126,6 +171,8 @@
               Create Account
             </button>
           </form>
+
+          
 
           <div class="mt-8 text-center">
             <p class="text-gray-600">
