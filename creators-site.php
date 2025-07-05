@@ -1,0 +1,370 @@
+
+
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortofolioYO! - Creative Portfolio Platform</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-page-background text-page-text">
+<!-- Navbar -->
+  <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center">
+      <a href="index.php" class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></a>
+    </div>
+<div class="hidden md:flex space-x-6">
+      <div class="flex-1 flex justify-center items-center space-x-6">
+        <a href="dashboard-site.php" class="text-page-text hover:text-primary font-medium">
+          Explore
+        </a>
+        <a href="creators-site.php" class="text-page-text hover:text-primary font-medium">
+          Creators
+        </a>
+      </div>
+    <div class="flex items-center space-x-4">
+      <button class="p-2 rounded-full hover:bg-gray-100">
+        <i data-feather="search" class="text-gray-600 h-5 w-5"></i>
+      </button>
+      <!-- Notification Icon -->
+      <button class="p-2 rounded-full hover:bg-gray-100 relative">
+        <i data-feather="bell" class="text-gray-600 h-5 w-5"></i>
+        <span class="absolute top-1 right-1 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+      <a href="upload-site.php" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Upload Work</a>
+      <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-10 pb-16">
+      <!-- Decorative blobs -->
+      <div
+        class="blob-shape w-64 h-64 bg-soft-pink top-10 left-10 animate-float"
+      ></div>
+      <div
+        class="blob-shape w-80 h-80 bg-soft-yellow bottom-10 right-10 animate-float"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="blob-shape w-40 h-40 bg-soft-blue top-40 right-40 animate-float"
+        style="animation-delay: 2s"
+      ></div>
+      
+    <!-- Creators Section -->
+    <section class="py-6 bg-transparan opacity-90" id="creators-section">
+      <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-4xl mb-2 mt-1 font-bold text-center w-full"><span class="text-primary font-black">Top</span> Featured Creators</h1>
+      </div>
+
+      <!-- Search & Filter -->
+      <section class="py-10">
+        <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto relative">
+          <input type="text" placeholder="Search for projects, creators, or skills..." class="w-full px-6 py-4 border border-white-200 rounded-full shadow-sm bg-white-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+          <button class="absolute right-3 top-3 bg-primary text-white p-2 rounded-full hover:bg-primary/90 flex items-center justify-center">
+          <i data-feather="search" class="h-5 w-5"></i>
+          </button>
+        </div>
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Creator Card 1 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/men/32.jpg" 
+          alt="Alex Chen" 
+          class="w-20 h-20 rounded-full mb-4">
+          <h3 class="font-bold text-lg mb-1">Alex Chen</h3>
+          <p class="text-sm text-gray-500 mb-2">Graphic Designer</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">Logo Design</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">Branding</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+
+        <!-- Creator Card 2 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/women/44.jpg" 
+          alt="Emily Wong" 
+          class="w-20 h-20 rounded-full mb-4"
+          >
+          <h3 class="font-bold text-lg mb-1">Emily Wong</h3>
+          <p class="text-sm text-gray-500 mb-2">Web Designer</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">UI/UX</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">Web Design</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+
+        <!-- Creator Card 3 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/men/65.jpg" 
+          alt="Marcus Lee" 
+          class="w-20 h-20 rounded-full mb-4">
+          <h3 class="font-bold text-lg mb-1">Marcus Lee</h3>
+          <p class="text-sm text-gray-500 mb-2">Illustrator</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">Illustration</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">Character Design</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+
+        <!-- Creator Card 4 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/women/68.jpg" 
+          alt="Sophia Barnes" 
+          class="w-20 h-20 rounded-full mb-4"
+          >
+          <h3 class="font-bold text-lg mb-1">Sophia Barnes</h3>
+          <p class="text-sm text-gray-500 mb-2">Motion Designer</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">Animation</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">Video Editing</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+
+        <!-- Creator Card 5 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/men/12.jpg" 
+          alt="David Kim" 
+          class="w-20 h-20 rounded-full mb-4"
+          >
+          <h3 class="font-bold text-lg mb-1">David Kim</h3>
+          <p class="text-sm text-gray-500 mb-2">3D Artist</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">3D Modeling</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">Rendering</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+
+        <!-- Creator Card 6 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/women/23.jpg" 
+          alt="Lina Patel" 
+          class="w-20 h-20 rounded-full mb-4"
+          >
+          <h3 class="font-bold text-lg mb-1">Lina Patel</h3>
+          <p class="text-sm text-gray-500 mb-2">Photographer</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">Portrait</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">Nature</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+
+        <!-- Creator Card 7 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/men/77.jpg" 
+          alt="Carlos Rivera" 
+          class="w-20 h-20 rounded-full mb-4"
+          >
+          <h3 class="font-bold text-lg mb-1">Carlos Rivera</h3>
+          <p class="text-sm text-gray-500 mb-2">UI Engineer</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">Frontend</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">React</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+
+        <!-- Creator Card 8 -->
+        <div class="retro-card">
+        <div class="flex flex-col items-center text-center">
+          <img 
+          src="https://randomuser.me/api/portraits/women/81.jpg" 
+          alt="Nadia Siregar" 
+          class="w-20 h-20 rounded-full mb-4"
+          >
+          <h3 class="font-bold text-lg mb-1">Nadia Siregar</h3>
+          <p class="text-sm text-gray-500 mb-2">Content Creator</p>
+          <div class="flex mb-4">
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-accent fill-accent"></i>
+          <i data-feather="star" class="h-4 w-4 text-gray-300"></i>
+          </div>
+          <div class="flex space-x-3 mb-4">
+          <span class="text-xs bg-soft-pink px-2 py-1 rounded-full">Video</span>
+          <span class="text-xs bg-soft-blue px-2 py-1 rounded-full">Social Media</span>
+          </div>
+          <a href="creator-profile.php" class="retro-button bg-secondary text-white w-full">
+          View Profile
+          </a>
+        </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <section class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-8 md:mb-0">
+          <div class="flex items-center">
+            <span class="font-bold text-xl text-white">
+                Portofolio<span class="text-primary">YO</span><span class="text-yellow-400">!</span>
+              </span>
+          </div>
+          <p class="mt-4 max-w-xs text-gray-400">
+            The creative portfolio platform that helps you showcase your best work and connect with clients worldwide.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-bold text-lg mb-4">Platform</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">How it works</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-lg mb-4">Company</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-lg mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400">© 2025 PortofolioYO! All rights reserved.</p>
+        <div class="mt-4 md:mt-0 flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="facebook" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="instagram" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="twitter" class="h-6 w-6"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js"></script>
+
+</body>
+</html>

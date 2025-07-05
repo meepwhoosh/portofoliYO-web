@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Logo Design - PortofolioYO!</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-page-background text-page-text">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center">
+      <a href="index.php" class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></a>
+    </div>
+<div class="hidden md:flex space-x-6">
+      <div class="flex-1 flex justify-center items-center space-x-6">
+        <a href="index.php" class="text-page-text hover:text-primary font-medium">
+          Explore
+        </a>
+        <a href="creators.php" class="text-page-text hover:text-primary font-medium">
+          Creators
+        </a>
+      </div>
+    <div class="flex items-center space-x-4">
+      <button class="p-2 rounded-full hover:bg-gray-100">
+        <i data-feather="search" class="text-gray-600 h-5 w-5"></i>
+      </button>
+      <!-- Notification Icon -->
+      <button class="p-2 rounded-full hover:bg-gray-100 relative">
+        <i data-feather="bell" class="text-gray-600 h-5 w-5"></i>
+        <span class="absolute top-1 right-1 inline-block w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+      <a href="upload-site.php" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Upload Work</a>
+      <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </nav>
+
+  
+
+  <!-- Main content -->
+  <div class="container mx-auto px-4 py-8">
+
+    <a href="index.php" class="inline-flex items-center text-gray-600 hover:text-primary mb-6">
+      <i data-feather="arrow-left" class="h-5 w-5 mr-2"></i>
+         <span class="font-bold">Back to Explore</span>
+    </a>
+    
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="h-96 bg-gray-200 relative flex items-center justify-center">
+        <!-- Gambar work yang lebih nyata -->
+        <img 
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" 
+          alt="Modern Logo Design" 
+          class="w-full h-full object-cover">
+        <span class="absolute bottom-2 right-2 bg-white bg-opacity-80 px-2 py-1 rounded text-xs flex items-center">
+          <i data-feather="image" class="h-4 w-4 mr-1"></i>
+          Work Image
+        </span>
+      </div>
+      
+      <div class="p-6 md:p-8">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
+          <h1 class="text-3xl font-bold mb-2 md:mb-0">Modern Logo Design</h1>
+          
+          <div class="flex items-center space-x-4">
+            <button class="like-button flex items-center space-x-1 text-gray-600">
+              <i data-feather="heart" class="h-5 w-5"></i>
+              <span class="like-count">124</span>
+            </button>
+            
+            <button class="flex items-center space-x-1 text-gray-600">
+              <i data-feather="message-square" class="h-5 w-5"></i>
+              <span>18</span>
+            </button>
+            
+            <button class="flex items-center space-x-1 text-gray-600">
+              <i data-feather="share-2" class="h-5 w-5"></i>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4 py-4 border-b border-gray-200">
+          <a href="creator-profile.php" class="relative group">
+            <!-- Foto profil asli -->
+            <img 
+              src="https://randomuser.me/api/portraits/men/32.jpg" 
+              alt="Alex Chen" 
+              class="h-12 w-12 rounded-full border-2 border-primary">
+            <span class="absolute bottom-0 right-0 bg-green-400 border-2 border-white rounded-full w-3 h-3"></span>
+          </a>
+          
+          <div>
+            <a href="creator-profile.php" class="font-semibold text-page-text hover:text-primary flex items-center">
+              Alex Chen
+              <img src="https://img.icons8.com/color/16/000000/verified-badge.png" alt="Verified" class="ml-1" title="Verified Creator">
+            </a>
+            <p class="text-sm text-gray-500 flex items-center">
+              <img src="https://img.icons8.com/color/16/000000/singapore.png" alt="Singapore" class="mr-1"> Graphic Designer • Singapore
+            </p>
+          </div>
+          
+          <div class="ml-auto">
+            <button class="follow-button retro-button bg-secondary text-white mr-4">
+              Follow
+            </button>
+            <a href="creator-profile.php" class="retro-button bg-primary text-white">
+              Hire Me
+            </a>
+          </div>
+        </div>
+        
+        <div class="py-6">
+          <div class="flex items-center space-x-2 mb-4 text-sm">
+            <span class="bg-soft-peach px-3 py-1 rounded-full flex items-center">
+              <img src="https://img.icons8.com/color/16/000000/paint-palette.png" alt="Design" class="mr-1"> Graphic Design
+            </span>
+            <span class="text-gray-500">•</span>
+            <span class="text-gray-500 flex items-center">
+              <img src="https://img.icons8.com/color/16/000000/calendar--v1.png" alt="Date" class="mr-1"> May 10, 2025
+            </span>
+          </div>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            A minimalist logo design for a tech startup focusing on sustainability and innovation. The design utilizes 
+            negative space to represent growth and forward-thinking. The color palette was carefully selected to convey 
+            trust, reliability, and environmental consciousness while maintaining a modern tech feel.
+          </p>
+          
+          <div class="bg-soft-blue/30 p-4 rounded-lg">
+            <h3 class="font-semibold mb-2">About the Creator</h3>
+            <p class="text-gray-700 mb-3">
+              Award-winning designer with 5+ years of experience specializing in brand identity and logo design. 
+              I create memorable visual experiences that help brands stand out.
+            </p>
+            
+            <div>
+              <h4 class="text-sm font-semibold text-gray-600 mb-2">Skills</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/idea.png" alt="Logo" class="mr-1"> Logo Design
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/identity-theft.png" alt="Brand" class="mr-1"> Brand Identity
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/?size=16&id=TzsCwjhRimqt&format=png&color=000000" alt="Typography" class="mr-1"> Typography
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/adobe-illustrator.png" alt="Illustrator" class="mr-1"> Adobe Illustrator
+                </span>
+                <span class="bg-soft-pink px-3 py-1 rounded-full text-sm flex items-center">
+                  <img src="https://img.icons8.com/color/16/000000/figma--v1.png" alt="Figma" class="mr-1"> Figma
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pt-6 border-t border-gray-200">
+          <h3 class="font-bold text-xl mb-6">Comments (18)</h3>
+          
+          <form id="comment-form" class="mb-8">
+            <div class="flex space-x-4">
+              <!-- Foto profil user yang komentar -->
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Your Avatar" class="h-10 w-10 rounded-full border-2 border-primary">
+              <div class="flex-1">
+                <textarea
+                  id="comment-text"
+                  placeholder="Add a comment..."
+                  class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  rows="3"
+                ></textarea>
+                <div class="mt-2 text-right">
+                  <button 
+                    type="submit" 
+                    class="retro-button bg-primary text-white">
+                    Post Comment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+          
+          <div id="comments-container" class="space-y-6">
+            <div class="flex space-x-4">
+              <!-- Foto profil komentar 1 -->
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson" class="h-10 w-10 rounded-full border-2 border-primary">
+              <div class="flex-1">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold flex items-center">
+                      Sarah Johnson
+                      <img src="https://img.icons8.com/color/16/000000/verified-badge.png" alt="Verified" class="ml-1" title="Verified User">
+                    </span>
+                    <span class="text-sm text-gray-500">2 days ago</span>
+                  </div>
+                  <p class="text-gray-700">
+                    I love the use of negative space in this design! The color palette is perfect too.
+                  </p>
+                </div>
+                <div class="flex space-x-4 mt-2 text-sm text-gray-500">
+                  <button class="hover:text-primary">Like (5)</button>
+                  <button class="hover:text-primary">Reply</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex space-x-4">
+              <!-- Foto profil komentar 2 -->
+              <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Michael Brown" class="h-10 w-10 rounded-full border-2 border-primary">
+              <div class="flex-1">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold">Michael Brown</span>
+                    <span class="text-sm text-gray-500">1 week ago</span>
+                  </div>
+                  <p class="text-gray-700">
+                    Very impressive work! I'd be interested to see how this looks on different backgrounds.
+                  </p>
+                </div>
+                <div class="flex space-x-4 mt-2 text-sm text-gray-500">
+                  <button class="hover:text-primary">Like (3)</button>
+                  <button class="hover:text-primary">Reply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-8 md:mb-0">
+          <div class="flex items-center">
+            <span class="font-bold text-xl text-white">
+                Portofolio<span class="text-primary">YO</span><span class="text-yellow-400">!</span>
+              </span>
+          </div>
+          <p class="mt-4 max-w-xs text-gray-400">
+            The creative portfolio platform that helps you showcase your best work and connect with clients worldwide.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-bold text-lg mb-4">Platform</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">How it works</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-lg mb-4">Company</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold text-lg mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400">© 2025 PortofolioYO! All rights reserved.</p>
+        <div class="mt-4 md:mt-0 flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="facebook" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="instagram" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i data-feather="twitter" class="h-6 w-6"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js"></script>
+</body>
+</html>

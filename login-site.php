@@ -1,0 +1,274 @@
+<?php
+// Nonaktifkan tampilan error ke browser
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(0);
+
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - PortofolioYO!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-page-background text-page-text">
+
+<!-- Decorative blobs -->
+  <div class="pointer-events-none fixed z-0 inset-0">
+    <div
+      class="blob-shape w-64 h-64 bg-soft-pink absolute top-10 left-10 animate-float opacity-60"
+    ></div>
+    <div
+      class="blob-shape w-80 h-80 bg-soft-yellow absolute bottom-10 right-10 animate-float opacity-60"
+      style="animation-delay: 1s"
+    ></div>
+    <div
+      class="blob-shape w-40 h-40 bg-soft-blue absolute top-40 right-40 animate-float opacity-60"
+      style="animation-delay: 2s"
+    ></div>
+  </div>
+
+    <div class="min-h-screen bg-page-background flex flex-col">
+      <div class="container mx-auto px-4 py-8">
+        <a href="index.php" class="flex items-center text-page-text hover:text-primary mb-8">
+          <i data-feather="arrow-left" class="mr-2" size="18"></i>
+          <span class="font-bold">Back to home</span>
+        </a>
+
+        <div class="max-w-md mx-auto">
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+            <div class="text-center mb-8">
+              <div class="flex justify-center mb-4"></div>
+              <h1 class="text-2xl font-bold text-page-text">
+                Welcome back to
+                <span class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></span>
+              </h1>
+              <p class="text-gray-500 mt-2">
+                Sign in to your account to continue
+              </p>
+            </div>
+
+            <?php if (isset($_GET['error'])): ?>
+              <div class="mb-4">
+                <?php if ($_GET['error'] == 'wrong_password'): ?>
+                  <div class="bg-red-100 text-red-700 px-4 py-2 rounded">Password salah.</div>
+                <?php elseif ($_GET['error'] == 'no_user'): ?>
+                  <div class="bg-red-100 text-red-700 px-4 py-2 rounded">Email tidak ditemukan.</div>
+                <?php endif; ?>
+              </div>
+            <?php endif; ?>
+
+            <form id="login-form" action="index.php" method="POST" class="space-y-6">
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Email
+                </label>
+                <div class="relative">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="pl-10 block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="your@email.com"
+                    required
+                  />
+                  <i
+                    data-feather="mail"
+                    class="absolute left-3 top-3.5 h-5 w-5 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="password"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Password
+                </label>
+                <div class="relative">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    class="pl-10 block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    placeholder="••••••••"
+                    required
+                  />
+                  <i
+                    data-feather="lock"
+                    class="absolute left-3 top-3.5 h-5 w-5 text-gray-400"
+                  ></i>
+                  <button
+                    type="button"
+                    id="toggle-password"
+                    class="absolute right-3 top-3.5"
+                  >
+                    <i
+                      data-feather="eye"
+                      class="h-5 w-5 text-gray-400"
+                      id="password-icon"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                    class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                  />
+                  <label
+                    for="remember-me"
+                    class="ml-2 block text-sm text-gray-700"
+                  >
+                    Remember me
+                  </label>
+                </div>
+
+                <div class="text-sm">
+                  <a
+                    href="#"
+                    class="font-medium text-primary hover:text-primary/80"
+                  >
+                    Forgot password?
+                  </a>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="retro-button bg-primary text-white w-full"
+              >
+                Sign in
+              </button>
+            </form>
+            
+            <div class="mt-6">
+              <div class="flex items-center justify-center mb-4">
+              <span class="text-gray-400 text-sm">or continue with</span>
+              </div>
+              <div class="flex flex-row space-x-3 justify-center">
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition"
+                onclick="window.location.href='#'"
+              >
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="w-5 h-5 mr-2" />
+                <span class="text-gray-700 font-medium">Google</span>
+              </button>
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition"
+                onclick="window.location.href='sign-up.php'"
+              >
+                <i data-feather="mail" class="w-5 h-5 mr-2 text-gray-500"></i>
+                <span class="text-gray-700 font-medium">Email</span>
+              </button>
+              <button
+                type="button"
+                class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition"
+                onclick="window.location.href='#'"
+              >
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-5 h-5 mr-2" />
+                <span class="text-gray-700 font-medium">GitHub</span>
+              </button>
+              </div>
+            </div>
+
+            <div class="mt-8 text-center">
+              <p class="text-gray-600">
+                Don't have an account?
+                <a
+                  href="signup-site.php"
+                  class="text-secondary font-semibold hover:text-secondary/80"
+                >
+                  Sign up
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="javascript/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        feather.replace();
+
+        const togglePassword = document.getElementById("toggle-password");
+        const passwordInput = document.getElementById("password");
+        const passwordIcon = document.getElementById("password-icon");
+
+        if (togglePassword && passwordInput && passwordIcon) {
+          togglePassword.addEventListener("click", function () {
+            if (passwordInput.type === "password") {
+              passwordInput.type = "text";
+              passwordIcon.setAttribute("data-feather", "eye-off");
+            } else {
+              passwordInput.type = "password";
+              passwordIcon.setAttribute("data-feather", "eye");
+            }
+            feather.replace();
+          });
+        }
+      });
+    </script>
+<?php
+// Proses login jika ada POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include 'php/config.php';
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($id, $name, $hashed_password);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['user_id'] = $id;
+            $_SESSION['user_name'] = $name;
+            header("Location: index.php");
+            exit();
+        } else {
+            header("Location: login-site.php?error=wrong_password");
+            exit();
+        }
+    } else {
+        header("Location: login-site.php?error=no_user");
+        exit();
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
+  </body>
+</html>

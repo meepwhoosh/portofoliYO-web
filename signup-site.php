@@ -1,0 +1,178 @@
+<?php
+// PERBAIKAN: Aktifkan error reporting untuk development agar error terlihat jelas
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Diasumsikan config.php ada di path yang benar
+include 'php/config.php'; 
+
+$error = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $full_name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  // Validasi dasar
+  if (empty($full_name) || empty($email) || empty($password)) {
+      $error = "Semua kolom wajib diisi.";
+  } else {
+      $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+      $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+      $stmt->bind_param("sss", $name, $email, $hashed_password);
+
+      if ($stmt->execute()) {
+        header("Location: login-site.php?status=signup_success");
+        exit();
+      } else {
+        // PERBAIKAN: Beri pesan error yang lebih spesifik jika email duplikat
+        if ($conn->errno == 1062) {
+            $error = "Email sudah terdaftar. Silakan gunakan email yang lain.";
+        } else {
+            $error = "Terjadi kesalahan pada database: " . $stmt->error;
+        }
+      }
+
+      $stmt->close();
+  }
+  
+  $conn->close();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - PortofolioYO!</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-page-background text-page-text">
+
+  <div class="pointer-events-none fixed z-0 inset-0">
+    <div class="blob-shape w-64 h-64 bg-soft-pink absolute top-10 left-10 animate-float opacity-60"></div>
+    <div class="blob-shape w-80 h-80 bg-soft-yellow absolute bottom-10 right-10 animate-float opacity-60" style="animation-delay: 1s"></div>
+    <div class="blob-shape w-40 h-40 bg-soft-blue absolute top-40 right-40 animate-float opacity-60" style="animation-delay: 2s"></div>
+  </div>
+
+  <div class="min-h-screen bg-page-background flex flex-col">
+    <div class="container mx-auto px-4 py-8">
+      <a href="index.php" class="flex items-center text-page-text hover:text-primary mb-8">
+        <i data-feather="arrow-left" class="mr-2" size="18"></i>
+        <span class="font-bold">Back to home</span>
+      </a>
+
+      <div class="max-w-md mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+          <div class="text-center mb-8">
+            <h1 class="text-2xl font-bold text-page-text">
+              Join <span class="text-2xl font-bold text-primary">PortofoliYO<span class="text-yellow-400">!</span></span>
+            </h1>
+            <p class="text-gray-500 mt-2">
+              Create your account and start sharing your work
+            </p>
+          </div>
+
+          <?php if ($error): ?>
+          <div class="mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-center font-semibold"><?php echo htmlspecialchars($error); ?></div>
+          <?php endif; ?>
+
+          <form id="signup-form" class="space-y-6" method="POST" action="signup-site.php">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <div class="relative">
+                <input id="name" name="name" type="text" class="pl-10 block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your Name" required/>
+                <i data-feather="user" class="absolute left-3 top-3.5 h-5 w-5 text-gray-400"></i>
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <div class="relative">
+                <input id="email" name="email" type="email" class="pl-10 block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="your@email.com" required/>
+                <i data-feather="mail" class="absolute left-3 top-3.5 h-5 w-5 text-gray-400"></i>
+              </div>
+            </div>
+            <div>
+              <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+              <div class="relative">
+                <input id="password" name="password" type="password" class="pl-10 block w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="••••••••" required/>
+                <i data-feather="lock" class="absolute left-3 top-3.5 h-5 w-5 text-gray-400"></i>
+                <button type="button" id="toggle-password" class="absolute right-3 top-3.5">
+                  <i data-feather="eye" class="h-5 w-5 text-gray-400" id="password-icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-6">
+        <div class="flex items-center justify-center mb-4">
+        <span class="text-gray-400 text-sm">or continue with</span>
+        </div>
+        <div class="flex flex-row space-x-3 justify-center">
+        <button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition" onclick="window.location.href='#'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="w-5 h-5 mr-2" />
+          <span class="text-gray-700 font-medium">Google</span>
+        </button>
+        <button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition" onclick="window.location.href='sign-up.php'">
+          <i data-feather="mail" class="w-5 h-5 mr-2 text-gray-500"></i>
+          <span class="text-gray-700 font-medium">Email</span>
+        </button>
+        <button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition" onclick="window.location.href='#'">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-5 h-5 mr-2" />
+          <span class="text-gray-700 font-medium">GitHub</span>
+        </button>
+        </div>
+      </div>
+
+            <div class="flex items-center">
+              <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required/>
+              <label for="terms" class="ml-2 block text-sm text-gray-700">
+                I agree to the <a href="#" class="text-secondary font-semibold">Terms of Service</a> and <a href="#" class="text-secondary font-semibold">Privacy Policy</a>
+              </label>
+            </div>
+            
+            <button type="submit" class="retro-button bg-primary text-white w-full">
+              Create Account
+            </button>
+          </form>
+
+          <div class="mt-8 text-center">
+            <p class="text-gray-600">
+              Already have an account?
+              <a href="login-site.php" class="text-secondary font-semibold hover:text-secondary/80">
+                Sign in
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="javascript/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      feather.replace();
+      // Kode JavaScript lainnya tetap sama
+      const togglePassword = document.getElementById('toggle-password');
+      const passwordInput = document.getElementById('password');
+      const passwordIcon = document.getElementById('password-icon');
+      if (togglePassword && passwordInput && passwordIcon) {
+        togglePassword.addEventListener('click', function() {
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordIcon.setAttribute('data-feather', 'eye-off');
+          } else {
+            passwordInput.type = 'password';
+            passwordIcon.setAttribute('data-feather', 'eye');
+          }
+          feather.replace();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
